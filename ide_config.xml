@@ -1,0 +1,47 @@
+<application>
+
+	<name>Squeezer</name>
+	<author>Guust Nieuwenhuis</author>
+	<version>1.0.1</version>
+	<email>info@lagaffe.be</email>	
+	<description>description.html</description>	
+	<license>license.html</license>
+
+	<install />
+	
+	<menucontributions>
+		<contribution target="projectview">
+			<menu name="Squeezer">
+				<filters>
+					<filter type="file" pattern="^.+\.((js))" />
+				</filters>
+				<action name="Google's Closure Compiler" handlerid="compileClosureCompiler" showresponse="true">
+				</action>
+				<action name="Yahoo's YUI Compressor" handlerid="compileYUICompressor" showresponse="true">
+				</action>
+			</menu>
+			<menu name="Squeezer">
+				<filters>
+					<filter type="file" pattern="^.+\.((css))" />
+				</filters>
+				<action name="Yahoo's YUI Compressor" handlerid="compileYUICompressor" showresponse="true">
+				</action>
+			</menu>
+		</contribution>
+		<contribution target="rdsview">
+		</contribution>
+		<contribution target="outlineview">
+		</contribution>
+		<contribution target="editor">
+		</contribution>		
+	</menucontributions>
+	
+	<events />
+	
+	<handlers>
+		<handler id="compileClosureCompiler" type="cfm" filename="compileClosureCompilerIndex.cfm" />
+		<handler id="compileYUICompressor" type="cfm" filename="compresYUICompressorIndex.cfm" />
+	</handlers>
+
+</application>
+

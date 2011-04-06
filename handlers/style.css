@@ -1,0 +1,28 @@
+/*
+Name:			style.css
+Author:			Guust Nieuwenhuis (info@lagaffe.be)
+Description:	Styling of the forms in the interface
+Last update:	29/04/2010
+*/
+
+.input
+{
+	width: 100%;
+}
+
+.subinput
+{
+	margin: 0px 0px 0px 40px;
+	width: 100%;
+}
+
+.label
+{
+	width: 20%;
+	float: left;
+}
+
+.error
+{
+	color: red;
+}
