@@ -67,12 +67,25 @@ Last update:	29/04/2010
 						disableOptimizations = form.disableOptimizations
 						);
 	</cfscript>
+	
+	<cfsavecontent variable="message" >
+		<p>The file has been successfully compiled...</p>
+	</cfsavecontent>
+	
+	<cfset resultPath = getDirectoryFromPath(cgi.script_name) & "compileYUICompressorResult.cfm?msg=#UrlEncodedFormat(message)#" />
+	<cfset resultURL = "http://" & cgi.server_name & ":" & cgi.server_port & resultPath />
+
+	<cfif FindNoCase("Jakarta",cgi.HTTP_USER_AGENT) eq 0>
+		<cflocation url="#resultURL#" addtoken="false" />
+	</cfif>
 
 	<!--- IDE-response --->
 	<cfheader name="Content-Type" value="text/xml">
 	<response showresponse="true"> 
-		<ide> 
-			<!--- Refresh the project folder in the navigator --->
+		<!--- Let the user know everything went well... --->
+		<ide url="#resultURL#"> 
+			<dialog title="Squeezer" width="100%" height="650" /> 
+		<!--- Refresh the project folder in the navigator --->
 		    <commands> 
 				<command type="refreshproject"> 
 					<params> 
@@ -81,14 +94,6 @@ Last update:	29/04/2010
 				</command> 
 		    </commands> 
 		</ide> 
-		<ide> 
-			<!--- Let the user know everything went well... --->
-			<dialog width="100%" height="650" /> 
-			<body> 
-			<![CDATA[ 
-			The file has been successfully compiled...
-			]]> 
-			</body> 
-		</ide> 
 	</response>
+
 </cfoutput>

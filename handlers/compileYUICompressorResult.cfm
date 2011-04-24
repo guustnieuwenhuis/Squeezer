@@ -1,0 +1,4 @@
+﻿
+<cfoutput>
+	#URL.msg#
+</cfoutput>
