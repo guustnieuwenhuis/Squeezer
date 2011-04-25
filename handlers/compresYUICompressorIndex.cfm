@@ -27,7 +27,7 @@ Last update:	29/04/2010
 	<cfheader name="Content-Type" value="text/xml">
 	<response showresponse="true"> 
 		<ide url="#messagesURL#" > 
-			<dialog width="100%" height="650" /> 
+			<dialog width="100%" height="650" image="Logo.png" /> 
 		</ide> 
 	</response>
 </cfoutput>
